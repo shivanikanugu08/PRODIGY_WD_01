@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Navigation Menu</title>
+  <style>
+    /* Base navigation styling */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #222;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.8em 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+      z-index: 1000;
+    }
+
+    /* Style when scrolled */
+    .navbar.scrolled {
+      background-color: #0077b6;
+      color: #ffe066;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    /* Navigation links */
+    .navbar ul {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar li {
+      margin: 0 1.5em;
+    }
+
+    .navbar a {
+      color: inherit;
+      text-decoration: none;
+      font-size: 1.15em;
+      font-weight: 500;
+      padding: 0.3em 0.8em;
+      border-radius: 4px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Hover effect */
+    .navbar a:hover, .navbar a:focus {
+      background: #48cae4;
+      color: #222;
+    }
+
+    /* For demonstration: page content */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding-top: 60px; /* Space for navbar */
+    }
+    .content {
+      max-width: 800px;
+      margin: 2em auto;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h2>Welcome to the Demo</h2>
+    <p>
+      Scroll down this page to see the navigation bar change color. Hover over each menu item to see an interactive effect. The navigation bar is fixed and always visible at the top of the page.
+    </p>
+    <p>
+      Keep scrolling to experience the menu interactivity. You can reuse and adapt this menu in any project—just update the links!
+    </p>
+    <p style="margin-bottom:600px;"></p>
+  </div>
+  <script>
+    // Change navbar style when scrolled
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 30) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
